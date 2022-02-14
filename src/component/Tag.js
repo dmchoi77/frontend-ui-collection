@@ -4,14 +4,31 @@ import styled from "styled-components";
 export default function Tag() {
   const handlekeyPress = (e) => {
     if (e.key === "Enter") {
+      if (e.target.value === "") {
+        return;
+      }
+
       let $newDiv = document.createElement("div");
-      let $newTag = document.createTextNode(e.target.value);
+      let $newTag = document.createTextNode("# " + e.target.value);
       let $tags = document.getElementsByClassName("tag-list");
 
       $newDiv.appendChild($newTag);
-      console.log($newDiv);
-      console.log($tags);
-      $tags.append($newDiv);
+
+      // Tag CSS
+      Object.assign($newDiv.style, {
+        backgroundColor: "#4e2cb1",
+        color: "#ffff",
+        borderRadius: "35%",
+        padding: "6px",
+      });
+
+      // 클릭 시 태그 제거
+      $newDiv.addEventListener("click", (e) => {
+        e.target.remove();
+      });
+
+      $tags[0].appendChild($newDiv);
+      e.target.value = "";
     }
   };
   return (
@@ -22,17 +39,24 @@ export default function Tag() {
           style={{
             display: "flex",
             width: "500px",
-            // backgroundColor: "black",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <div className="tag-list"></div>
           <TagInput
             type="text"
             placeholder="Press enter to add tags"
             onKeyUp={handlekeyPress}
+          ></TagInput>
+          <div
+            className="tag-list"
+            style={{
+              padding: "15px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "8px",
+            }}
           />
         </div>
       </TagWrapper>
