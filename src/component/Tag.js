@@ -20,6 +20,7 @@ export default function Tag() {
         color: "#ffff",
         borderRadius: "35%",
         padding: "6px",
+        cursor: "pointer",
       });
 
       // 클릭 시 태그 제거
