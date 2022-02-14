@@ -4,6 +4,7 @@ import Modal from "./component/Modal";
 import Tab from "./component/Tab";
 import Tag from "./component/Tag";
 import Accordion from "./component/Accordion";
+import Button from "./component/Button";
 import { Link, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Link to="/tab">Tab</Link>
       <Link to="/tag">Tag</Link>
       <Link to="/accordion">Accordion</Link>
+      <Link to="/button">Button</Link>
 
       <Routes>
         <Route path="toggle" element={<Toggle />} />
@@ -21,6 +23,7 @@ function App() {
         <Route path="tab" element={<Tab />} />
         <Route path="tag" element={<Tag />} />
         <Route path="accordion" element={<Accordion />} />
+        <Route path="button" element={<Button />} />
       </Routes>
     </div>
   );
