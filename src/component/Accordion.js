@@ -1,29 +1,22 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 function Accordion() {
   const [isActive, setIsActive] = useState(false);
-
-  const activeHandler = () => {
-    setIsActive((value) => !value);
-  };
-
+  console.log(isActive);
   return (
     <>
       <h3>Accordion</h3>
-
       <AccordionWrapper>
-        <AccordionTittle onClick={activeHandler}>
+        <AccordionTittle onClick={() => setIsActive((value) => !value)}>
           <div>What is Accordion?</div>
           <div>{isActive ? "-" : "+"}</div>
         </AccordionTittle>
-        {isActive ? (
-          <AccordionContent>
-            An accordion is used to show (and hide) HTML content. <br />
-            Use the w3-hide class to hide the accordion content.
-            <br /> Use any kind of button to open and close the content
-          </AccordionContent>
-        ) : null}
+        <AccordionContent isActive={isActive}>
+          An accordion is used to show (and hide) HTML content. <br />
+          Use the w3-hide class to hide the accordion content.
+          <br /> Use any kind of button to open and close the content
+        </AccordionContent>
       </AccordionWrapper>
     </>
   );
@@ -54,9 +47,27 @@ const AccordionTittle = styled.div`
 `;
 
 const AccordionContent = styled.div`
-  border-top: 1px solid #ffff;
-  width: 500px;
-  padding: 25px;
-  background-color: #926dff;
-  color: #ffff;
+  ${({ isActive }) => {
+    if (isActive) {
+      return css`
+        border-top: 1px solid #ffff;
+        width: 500px;
+        padding: 25px;
+        color: #ffff;
+        background-color: #926dff;
+        opacity: 1;
+        transition: 500ms;
+      `;
+    } else {
+      return css`
+        border-top: 1px solid #ffff;
+        width: 500px;
+        padding: 25px;
+        color: #ffff;
+        background-color: #926dff;
+        opacity: 0;
+        transition: 500ms;
+      `;
+    }
+  }}};
 `;
