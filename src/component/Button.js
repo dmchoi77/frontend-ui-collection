@@ -16,7 +16,7 @@ function Button() {
         >
           <div>Click To Home</div>
           <NextButton>
-            <img src="./right-arrow.png" />
+            <img src="../right-arrow.png" alt="right-arrow" />
           </NextButton>
         </ButtonComponent>
       </ButtonWrapper>
