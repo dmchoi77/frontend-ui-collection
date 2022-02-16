@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Toggle from "../Toggle";
 import Modal from "../Modal";
 import Tab from "../Tab";
 import Tag from "../Tag";
 import Accordion from "../Accordion";
 import Button from "../Button";
+import Stepper from "../Stepper";
 
 function Content() {
   return (
@@ -18,6 +19,7 @@ function Content() {
         <Route path="tag" element={<Tag />} />
         <Route path="accordion" element={<Accordion />} />
         <Route path="button" element={<Button />} />
+        <Route path="Stepper" element={<Stepper />} />
       </Routes>
     </ContentWrapper>
   );
@@ -29,6 +31,6 @@ const ContentWrapper = styled.div`
   padding: 50px;
   position: fixed;
   top: 70px;
-  left: 300px;
+  left: 400px;
   width: 800px;
 `;

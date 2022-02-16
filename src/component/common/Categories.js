@@ -12,6 +12,7 @@ function Categories() {
       <Link to="/tag">Tag</Link>
       <Link to="/accordion">Accordion</Link>
       <Link to="/button">Button</Link>
+      <Link to="/stepper">Stepper</Link>
     </CategoriesWrapper>
   );
 }
