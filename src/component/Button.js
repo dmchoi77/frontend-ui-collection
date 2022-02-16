@@ -1,13 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 function Button() {
+  let navigate = useNavigate();
+
   return (
     <>
       <h3>Button</h3>
       <ButtonWrapper>
-        <ButtonComponent>
-          <div>Click Me!</div>
+        <ButtonComponent
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <div>Click To Home</div>
           <NextButton>
             <img src="./right-arrow.png" />
           </NextButton>
