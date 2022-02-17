@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-import { Link, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Categories() {
   return (
@@ -13,6 +12,7 @@ function Categories() {
       <Link to="/accordion">Accordion</Link>
       <Link to="/button">Button</Link>
       <Link to="/stepper">Stepper</Link>
+      <Link to="/form">Form</Link>
     </CategoriesWrapper>
   );
 }

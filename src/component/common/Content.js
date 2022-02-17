@@ -8,6 +8,7 @@ import Tag from "../Tag";
 import Accordion from "../Accordion";
 import Button from "../Button";
 import Stepper from "../Stepper";
+import Form from "../Form";
 
 function Content() {
   return (
@@ -19,7 +20,8 @@ function Content() {
         <Route path="tag" element={<Tag />} />
         <Route path="accordion" element={<Accordion />} />
         <Route path="button" element={<Button />} />
-        <Route path="Stepper" element={<Stepper />} />
+        <Route path="stepper" element={<Stepper />} />
+        <Route path="form" element={<Form />} />
       </Routes>
     </ContentWrapper>
   );
@@ -29,8 +31,8 @@ export default Content;
 
 const ContentWrapper = styled.div`
   padding: 50px;
-  position: fixed;
+  // position: absolute;
   top: 70px;
-  left: 400px;
-  width: 800px;
+  left: 200px;
+  // width: 800px;
 `;
