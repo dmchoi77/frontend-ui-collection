@@ -13,6 +13,7 @@ function Categories() {
       <Link to="/button">Button</Link>
       <Link to="/stepper">Stepper</Link>
       <Link to="/form">Form</Link>
+      <Link to="/badge">Badge</Link>
     </CategoriesWrapper>
   );
 }

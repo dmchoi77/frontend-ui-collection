@@ -9,6 +9,7 @@ import Accordion from "../Accordion";
 import Button from "../Button";
 import Stepper from "../Stepper";
 import Form from "../Form";
+import Badge from "../Badge";
 
 function Content() {
   return (
@@ -22,6 +23,7 @@ function Content() {
         <Route path="button" element={<Button />} />
         <Route path="stepper" element={<Stepper />} />
         <Route path="form" element={<Form />} />
+        <Route path="badge" element={<Badge />} />
       </Routes>
     </ContentWrapper>
   );
